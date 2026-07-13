@@ -31,7 +31,8 @@ if [ -d "$CONFIG_DIR" ]; then
 	git -C "$CONFIG_DIR" pull
 else
 	git clone "$REPO_URL" "$CONFIG_DIR"
-	git checkout $GIT_BRANCH
+	cd "$CONFIG_DIR"
+	git checkout "$GIT_BRANCH"
 fi
 
 echo "==> Syncing plugins..."
