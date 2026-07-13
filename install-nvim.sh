@@ -23,7 +23,7 @@ ln -sf "$INSTALL_DIR/bin/nvim" /usr/local/bin/nvim
 
 echo "==> Installing dependencies"
 apt update -qq
-apt install -y git curl unzip built-essential ripgrep fd-find
+apt install -y git curl unzip build-essential ripgrep fd-find
 
 echo "==> Cloning nvim config"
 if [ -d "$CONFIG_DIR" ]; then
