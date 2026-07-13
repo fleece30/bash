@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_URL="https://github.com/fleece30/bash.git"
+REPO_URL="https://github.com/fleece30/nvim-config.git"
 CONFIG_DIR="$HOME/.config/nvim"
 INSTALL_DIR="/opt/nvim"
 GIT_BRANCH="lab-nvim-config"
