@@ -11,7 +11,7 @@ ARCH=$(uname -m)
 if [ "$ARCH" == "aarch64" ]; then
 	NVIM_ARCH="arm64"
 else
-	NVIM_ARCH=""
+	NVIM_ARCH="x86_64"
 fi
 
 curl -LO "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-${NVIM_ARCH}.tar.gz"
