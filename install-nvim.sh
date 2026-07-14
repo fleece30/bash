@@ -23,10 +23,9 @@ ln -sf "$INSTALL_DIR/bin/nvim" /usr/local/bin/nvim
 
 export PATH="$PATH:/usr/local/bin"
 
-if ! echo "$PATH" | grep -q "/usr/local/bin"; then
-  echo "==> /usr/local/bin missing from PATH, adding it system-wide..."
-  echo 'export PATH="$PATH:/usr/local/bin"' > /etc/profile.d/local-bin.sh
-  chmod +x /etc/profile.d/local-bin.sh
+if ! grep -q "/usr/local/bin" /etc/environment 2>/dev/null; then
+  echo "==> Adding /usr/local/bin to system-wide PATH..."
+  echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' > /etc/environment
 fi
 
 echo "==> Installing dependencies"
