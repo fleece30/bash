@@ -21,6 +21,8 @@ mv "nvim-linux-${NVIM_ARCH}" "$INSTALL_DIR"
 rm "nvim-linux-${NVIM_ARCH}.tar.gz"
 ln -sf "$INSTALL_DIR/bin/nvim" /usr/local/bin/nvim
 
+export PATH="$PATH:/usr/local/bin"
+
 if ! echo "$PATH" | grep -q "/usr/local/bin"; then
   echo "==> /usr/local/bin missing from PATH, adding it system-wide..."
   echo 'export PATH="$PATH:/usr/local/bin"' > /etc/profile.d/local-bin.sh
