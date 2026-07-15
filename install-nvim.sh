@@ -19,14 +19,7 @@ tar xzf "nvim-linux-${NVIM_ARCH}.tar.gz"
 rm -rf "$INSTALL_DIR"
 mv "nvim-linux-${NVIM_ARCH}" "$INSTALL_DIR"
 rm "nvim-linux-${NVIM_ARCH}.tar.gz"
-ln -sf "$INSTALL_DIR/bin/nvim" /usr/local/bin/nvim
-
-export PATH="$PATH:/usr/local/bin"
-
-if ! grep -q "/usr/local/bin" /etc/environment 2>/dev/null; then
-  echo "==> Adding /usr/local/bin to system-wide PATH..."
-  echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' > /etc/environment
-fi
+ln -sf "$INSTALL_DIR/bin/nvim" /usr/bin/nvim
 
 echo "==> Installing dependencies"
 apt update -qq
